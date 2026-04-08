@@ -182,7 +182,7 @@ function BusquedaContent() {
 
 export default function BusquedaPage() {
   return (
-    <Suspense>
+    <Suspense fallback={null}>
       <BusquedaContent />
     </Suspense>
   );

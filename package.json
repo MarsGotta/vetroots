@@ -9,7 +9,11 @@
     "build:cms": "turbo build --filter=cms",
     "build:web": "turbo build --filter=web",
     "docker:up": "docker compose -f docker/docker-compose.yml up -d",
-    "docker:down": "docker compose -f docker/docker-compose.yml down"
+    "docker:down": "docker compose -f docker/docker-compose.yml down",
+    "docker:prod:up": "docker compose -f docker/docker-compose.prod.yml up -d",
+    "docker:prod:down": "docker compose -f docker/docker-compose.prod.yml down",
+    "docker:prod:build": "docker compose -f docker/docker-compose.prod.yml build",
+    "docker:prod:logs": "docker compose -f docker/docker-compose.prod.yml logs -f"
   },
   "devDependencies": {
     "turbo": "^2"
@@ -17,5 +21,11 @@
   "packageManager": "pnpm@9.15.4",
   "engines": {
     "node": ">=20.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "^19",
+      "@types/react-dom": "^19"
+    }
   }
 }
