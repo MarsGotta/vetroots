@@ -1,0 +1,21 @@
+{
+  "name": "vetroots",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "dev:cms": "turbo dev --filter=cms",
+    "dev:web": "turbo dev --filter=web",
+    "build:cms": "turbo build --filter=cms",
+    "build:web": "turbo build --filter=web",
+    "docker:up": "docker compose -f docker/docker-compose.yml up -d",
+    "docker:down": "docker compose -f docker/docker-compose.yml down"
+  },
+  "devDependencies": {
+    "turbo": "^2"
+  },
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

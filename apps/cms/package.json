@@ -1,0 +1,25 @@
+{
+  "name": "cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Vetroots CMS — Strapi v5",
+  "scripts": {
+    "dev": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/strapi": "^5",
+    "@strapi/plugin-users-permissions": "^5",
+    "@strapi/plugin-cloud": "^5",
+    "@strapi/provider-upload-aws-s3": "^5",
+    "strapi-plugin-meilisearch": "^0.16.0",
+    "pg": "^8",
+    "better-sqlite3": "^11"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}

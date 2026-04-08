@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vetroots-50: #f0fdf4;
+  --color-vetroots-100: #dcfce7;
+  --color-vetroots-200: #bbf7d0;
+  --color-vetroots-300: #86efac;
+  --color-vetroots-400: #4ade80;
+  --color-vetroots-500: #22c55e;
+  --color-vetroots-600: #16a34a;
+  --color-vetroots-700: #15803d;
+  --color-vetroots-800: #166534;
+  --color-vetroots-900: #14532d;
+  --color-vetroots-950: #052e16;
+
+  --color-earth-50: #fdf8f0;
+  --color-earth-100: #f5ead6;
+  --color-earth-200: #e8d5b0;
+  --color-earth-300: #d4b882;
+  --color-earth-400: #c49b5a;
+  --color-earth-500: #a67c3d;
+  --color-earth-600: #8b6530;
+  --color-earth-700: #6e4f28;
+  --color-earth-800: #5a4124;
+  --color-earth-900: #4a3621;
+  --color-earth-950: #2a1e12;
+
+  --color-surface: #0f1a12;
+  --color-surface-elevated: #162019;
+  --color-surface-card: #1a2b1f;
+  --color-border-subtle: #2a3d2f;
+  --color-text-primary: #e8f5ec;
+  --color-text-secondary: #9cb8a4;
+  --color-text-muted: #6b8a73;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+a {
+  color: var(--color-vetroots-400);
+}
+
+a:hover {
+  color: var(--color-vetroots-300);
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag",
+    "description": "Content tag for flexible taxonomy"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 100
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "fichas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ficha.ficha",
+      "mappedBy": "tags"
+    },
+    "posters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::poster.poster",
+      "mappedBy": "tags"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::video.video",
+      "mappedBy": "tags"
+    }
+  }
+}
