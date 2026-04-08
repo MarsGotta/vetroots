@@ -1,4 +1,4 @@
-{
+export default {
   "kind": "collectionType",
   "collectionName": "categories",
   "info": {
@@ -57,4 +57,4 @@
       "mappedBy": "category"
     }
   }
-}
+} as const;

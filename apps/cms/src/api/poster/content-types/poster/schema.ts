@@ -1,4 +1,4 @@
-{
+export default {
   "kind": "collectionType",
   "collectionName": "posters",
   "info": {
@@ -84,4 +84,4 @@
       "maxLength": 160
     }
   }
-}
+} as const;

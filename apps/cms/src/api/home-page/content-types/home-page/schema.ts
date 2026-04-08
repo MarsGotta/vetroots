@@ -1,4 +1,4 @@
-{
+export default {
   "kind": "singleType",
   "collectionName": "home_pages",
   "info": {
@@ -38,4 +38,4 @@
       "target": "api::poster.poster"
     }
   }
-}
+} as const;

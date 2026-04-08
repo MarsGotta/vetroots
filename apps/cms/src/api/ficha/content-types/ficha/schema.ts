@@ -1,11 +1,11 @@
-{
+export default {
   "kind": "collectionType",
-  "collectionName": "videos",
+  "collectionName": "fichas",
   "info": {
-    "singularName": "video",
-    "pluralName": "videos",
-    "displayName": "Video",
-    "description": "Educational video with embed URL and optional transcription"
+    "singularName": "ficha",
+    "pluralName": "fichas",
+    "displayName": "Ficha",
+    "description": "Educational veterinary card — the core content unit"
   },
   "options": {
     "draftAndPublish": true
@@ -23,39 +23,37 @@
       "targetField": "title",
       "required": true
     },
-    "description": {
+    "summary": {
       "type": "text",
-      "maxLength": 1000
-    },
-    "videoUrl": {
-      "type": "string",
-      "required": true,
       "maxLength": 500
     },
-    "duration": {
-      "type": "integer",
-      "min": 0
+    "content": {
+      "type": "blocks",
+      "required": true
     },
-    "thumbnail": {
+    "coverImage": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": ["images"]
     },
-    "transcription": {
-      "type": "blocks"
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
     },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::category.category",
-      "inversedBy": "videos"
+      "inversedBy": "fichas"
     },
     "species": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::species.species",
-      "inversedBy": "videos"
+      "inversedBy": "fichas"
     },
     "area": {
       "type": "enumeration",
@@ -79,7 +77,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::tag.tag",
-      "inversedBy": "videos"
+      "inversedBy": "fichas"
     },
     "seoTitle": {
       "type": "string",
@@ -90,4 +88,4 @@
       "maxLength": 160
     }
   }
-}
+} as const;

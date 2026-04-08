@@ -1,11 +1,11 @@
-{
+export default {
   "kind": "collectionType",
-  "collectionName": "tags",
+  "collectionName": "species_list",
   "info": {
-    "singularName": "tag",
-    "pluralName": "tags",
-    "displayName": "Tag",
-    "description": "Content tag for flexible taxonomy"
+    "singularName": "species",
+    "pluralName": "species-list",
+    "displayName": "Species",
+    "description": "Animal species for taxonomy"
   },
   "options": {
     "draftAndPublish": false
@@ -23,23 +23,29 @@
       "targetField": "name",
       "required": true
     },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
     "fichas": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::ficha.ficha",
-      "mappedBy": "tags"
+      "mappedBy": "species"
     },
     "posters": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::poster.poster",
-      "mappedBy": "tags"
+      "mappedBy": "species"
     },
     "videos": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::video.video",
-      "mappedBy": "tags"
+      "mappedBy": "species"
     }
   }
-}
+} as const;

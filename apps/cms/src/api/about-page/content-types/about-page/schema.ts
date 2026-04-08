@@ -1,4 +1,4 @@
-{
+export default {
   "kind": "singleType",
   "collectionName": "about_pages",
   "info": {
@@ -30,4 +30,4 @@
       "allowedTypes": ["images"]
     }
   }
-}
+} as const;
