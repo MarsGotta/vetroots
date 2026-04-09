@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,9 +8,18 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <Link
             href="/"
-            className="text-lg font-bold text-vetroots-400 no-underline"
+            className="flex items-center gap-2 no-underline hover:opacity-80 transition-opacity"
           >
-            Vetroots
+            <Image
+              src="/vetroots-logo.webp"
+              alt="Vetroots"
+              width={28}
+              height={28}
+              className="rounded-full"
+            />
+            <span className="text-lg font-semibold text-text-primary">
+              Vetroots
+            </span>
           </Link>
           <p className="text-sm text-text-muted">
             Catálogo Educativo Veterinario

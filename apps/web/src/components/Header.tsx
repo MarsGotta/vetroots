@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import HeaderSearchBar from "./HeaderSearchBar";
 
 const navLinks = [
@@ -14,9 +15,18 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight text-vetroots-400 no-underline hover:text-vetroots-300"
+          className="flex items-center gap-2 no-underline hover:opacity-80 transition-opacity"
         >
-          Vetroots
+          <Image
+            src="/vetroots-logo.webp"
+            alt="Vetroots"
+            width={32}
+            height={32}
+            className="rounded-full"
+          />
+          <span className="text-lg font-semibold tracking-tight text-text-primary">
+            Vetroots
+          </span>
         </Link>
 
         <ul className="hidden items-center gap-6 sm:flex">
@@ -24,7 +34,7 @@ export default function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-text-secondary no-underline transition-colors hover:text-vetroots-400"
+                className="text-sm font-medium text-text-secondary no-underline transition-colors hover:text-text-primary"
               >
                 {link.label}
               </Link>

@@ -1,42 +1,55 @@
 @import "tailwindcss";
 
 @theme {
-  --color-vetroots-50: #f0fdf4;
-  --color-vetroots-100: #dcfce7;
-  --color-vetroots-200: #bbf7d0;
-  --color-vetroots-300: #86efac;
-  --color-vetroots-400: #4ade80;
-  --color-vetroots-500: #22c55e;
-  --color-vetroots-600: #16a34a;
-  --color-vetroots-700: #15803d;
-  --color-vetroots-800: #166534;
-  --color-vetroots-900: #14532d;
-  --color-vetroots-950: #052e16;
+  /* Sage green — brand primary (from ColorPalette.svg) */
+  --color-vetroots-50: #DFEEDF;
+  --color-vetroots-100: #D9E6D9;
+  --color-vetroots-200: #C4D9C4;
+  --color-vetroots-300: #AFC9AF;
+  --color-vetroots-400: #8CA18C;
+  --color-vetroots-500: #6B7B6B;
+  --color-vetroots-600: #4B574B;
+  --color-vetroots-700: #3A443A;
+  --color-vetroots-800: #2D352D;
+  --color-vetroots-900: #1E241E;
+  --color-vetroots-950: #121612;
 
-  --color-earth-50: #fdf8f0;
-  --color-earth-100: #f5ead6;
-  --color-earth-200: #e8d5b0;
-  --color-earth-300: #d4b882;
-  --color-earth-400: #c49b5a;
-  --color-earth-500: #a67c3d;
-  --color-earth-600: #8b6530;
-  --color-earth-700: #6e4f28;
-  --color-earth-800: #5a4124;
-  --color-earth-900: #4a3621;
-  --color-earth-950: #2a1e12;
+  /* Warm earth tones — secondary (from ColorPalette.svg) */
+  --color-earth-50: #E9E4D5;
+  --color-earth-100: #E6E2D8;
+  --color-earth-200: #C1BCAC;
+  --color-earth-300: #9A9689;
+  --color-earth-400: #747167;
+  --color-earth-500: #514F47;
+  --color-earth-600: #302E2A;
+  --color-earth-700: #242220;
+  --color-earth-800: #1A1917;
+  --color-earth-900: #12110E;
+  --color-earth-950: #0A0908;
 
-  --color-surface: #0f1a12;
-  --color-surface-elevated: #162019;
-  --color-surface-card: #1a2b1f;
-  --color-border-subtle: #2a3d2f;
-  --color-text-primary: #e8f5ec;
-  --color-text-secondary: #9cb8a4;
-  --color-text-muted: #6b8a73;
+  /* Semantic tokens — dark forest floor theme */
+  --color-surface: #121612;
+  --color-surface-elevated: #1C221C;
+  --color-surface-card: #202820;
+  --color-border-subtle: #2D352D;
+  --color-text-primary: #DFEEDF;
+  --color-text-secondary: #AFC9AF;
+  --color-text-muted: #6B7B6B;
+
+  /* Font families */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-lora), Georgia, serif;
 }
 
 body {
   background-color: var(--color-surface);
   color: var(--color-text-primary);
+}
+
+/* Serif headings for editorial/educational feel */
+h1,
+h2 {
+  font-family: var(--font-serif);
 }
 
 a {

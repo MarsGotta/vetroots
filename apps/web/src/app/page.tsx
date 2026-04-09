@@ -25,7 +25,7 @@ export default async function HomePage() {
       {/* Hero */}
       <section className="border-b border-border-subtle bg-surface-elevated">
         <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8">
-          <h1 className="text-3xl font-bold tracking-tight text-vetroots-400 sm:text-5xl">
+          <h1 className="text-3xl font-bold tracking-tight text-vetroots-300 sm:text-5xl">
             {home?.heroTitle ?? "Vetroots"}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-text-secondary">
