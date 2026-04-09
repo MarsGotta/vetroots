@@ -20,6 +20,12 @@ const levelLabels: Record<Level, string> = {
   avanzado: "Avanzado",
 };
 
+const tagColors: Record<string, string> = {
+  category: "bg-tag-pink text-text-primary",
+  level: "bg-tag-peach text-text-primary",
+  area: "bg-tag-mint text-text-primary",
+};
+
 export default function ContentCard({
   title,
   href,
@@ -27,13 +33,15 @@ export default function ContentCard({
   category,
   level,
   description,
+  area,
 }: ContentCardProps) {
   const imageUrl = strapiMediaUrl(image);
 
   return (
     <Link href={href} className="group block no-underline">
-      <article className="overflow-hidden rounded-lg border border-border-subtle bg-surface-card transition-colors hover:border-vetroots-700">
-        <div className="relative aspect-[4/3] bg-surface-elevated">
+      <article className="overflow-hidden rounded-[var(--radius-lg)] border border-border-subtle bg-surface-card transition-shadow hover:shadow-lg">
+        {/* Square image (1:1) */}
+        <div className="relative aspect-square bg-surface-placeholder">
           {imageUrl ? (
             <Image
               src={imageUrl}
@@ -47,21 +55,36 @@ export default function ContentCard({
               Sin imagen
             </div>
           )}
+
+          {/* Bookmark icon */}
+          <div className="absolute right-3 top-3 rounded-full bg-surface-card/80 p-1.5 opacity-0 transition-opacity group-hover:opacity-100">
+            <svg className="h-4 w-4 text-text-secondary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+            </svg>
+          </div>
         </div>
+
         <div className="p-4">
-          <div className="mb-2 flex items-center gap-2">
+          {/* Pastel tag badges */}
+          <div className="mb-2 flex flex-wrap items-center gap-2">
             {category && (
-              <span className="rounded-full bg-vetroots-900/50 px-2 py-0.5 text-xs font-medium text-vetroots-400">
+              <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${tagColors.category}`}>
                 {category.name}
               </span>
             )}
             {level && (
-              <span className="rounded-full bg-earth-900/50 px-2 py-0.5 text-xs font-medium text-earth-300">
+              <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${tagColors.level}`}>
                 {levelLabels[level]}
               </span>
             )}
+            {area && (
+              <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${tagColors.area}`}>
+                {area}
+              </span>
+            )}
           </div>
-          <h3 className="text-base font-semibold text-text-primary group-hover:text-vetroots-400">
+
+          <h3 className="text-base font-semibold text-text-primary group-hover:text-brand-secondary">
             {title}
           </h3>
           {description && (

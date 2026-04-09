@@ -39,7 +39,6 @@ function BusquedaContent() {
       setLoading(true);
       try {
         const res = await searchContent(q, f);
-        // Only apply results if this is still the latest request
         if (thisRequest === requestIdRef.current) {
           setResult(res);
         }
@@ -87,7 +86,7 @@ function BusquedaContent() {
         <h1 className="mb-8 text-2xl font-bold text-text-primary sm:text-3xl">
           Búsqueda
         </h1>
-        <div className="rounded-lg border border-border-subtle bg-surface-card p-8 text-center">
+        <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-surface-card p-8 text-center">
           <p className="text-text-secondary">
             El servicio de búsqueda no está disponible en este momento.
           </p>
@@ -95,7 +94,7 @@ function BusquedaContent() {
             Mientras tanto, explora el contenido desde el{" "}
             <a
               href="/catalogo"
-              className="text-vetroots-400 hover:text-vetroots-300"
+              className="text-brand-secondary hover:text-brand-primary"
             >
               catálogo
             </a>
@@ -156,7 +155,7 @@ function BusquedaContent() {
           )}
 
           {!loading && result && result.hits.length === 0 && (
-            <div className="rounded-lg border border-border-subtle bg-surface-card p-8 text-center">
+            <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-surface-card p-8 text-center">
               <p className="text-text-secondary">
                 No se encontraron resultados para &ldquo;{result.query}
                 &rdquo;
@@ -168,7 +167,7 @@ function BusquedaContent() {
           )}
 
           {!loading && !result && (
-            <div className="rounded-lg border border-border-subtle bg-surface-card p-8 text-center">
+            <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-surface-card p-8 text-center">
               <p className="text-text-secondary">
                 Escribe algo para buscar en fichas, pósters y videos.
               </p>

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Sage green — brand primary (from ColorPalette.svg) */
+  /* ── Palette scales (from ColorPalette.svg) ── */
   --color-vetroots-50: #DFEEDF;
   --color-vetroots-100: #D9E6D9;
   --color-vetroots-200: #C4D9C4;
@@ -14,7 +14,6 @@
   --color-vetroots-900: #1E241E;
   --color-vetroots-950: #121612;
 
-  /* Warm earth tones — secondary (from ColorPalette.svg) */
   --color-earth-50: #E9E4D5;
   --color-earth-100: #E6E2D8;
   --color-earth-200: #C1BCAC;
@@ -27,35 +26,129 @@
   --color-earth-900: #12110E;
   --color-earth-950: #0A0908;
 
-  /* Semantic tokens — dark forest floor theme */
-  --color-surface: #121612;
-  --color-surface-elevated: #1C221C;
-  --color-surface-card: #202820;
-  --color-border-subtle: #2D352D;
-  --color-text-primary: #DFEEDF;
-  --color-text-secondary: #AFC9AF;
-  --color-text-muted: #6B7B6B;
+  /* ── Semantic tokens (resolved from data-theme below) ── */
+  --color-surface: var(--theme-surface);
+  --color-surface-elevated: var(--theme-surface-elevated);
+  --color-surface-card: var(--theme-surface-card);
+  --color-surface-muted: var(--theme-surface-muted);
+  --color-surface-placeholder: var(--theme-surface-placeholder);
+  --color-border-subtle: var(--theme-border-subtle);
+  --color-text-primary: var(--theme-text-primary);
+  --color-text-secondary: var(--theme-text-secondary);
+  --color-text-muted: var(--theme-text-muted);
+  --color-brand-primary: var(--theme-brand-primary);
+  --color-brand-secondary: var(--theme-brand-secondary);
+  --color-accent-coral: var(--theme-accent-coral);
+  --color-accent-coral-deep: var(--theme-accent-coral-deep);
+  --color-tag-pink: var(--theme-tag-pink);
+  --color-tag-peach: var(--theme-tag-peach);
+  --color-tag-mint: var(--theme-tag-mint);
+  --color-tag-orange: var(--theme-tag-orange);
 
-  /* Font families */
+  /* ── Font families ── */
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-serif: var(--font-lora), Georgia, serif;
+
+  /* ── Radius scale ── */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-xl: 48px;
 }
 
+/* ══════════════════════════════════════════════
+   Light theme (default)
+   ══════════════════════════════════════════════ */
+html,
+html[data-theme="light"] {
+  --theme-surface: #FCF9EF;
+  --theme-surface-elevated: #F7F4E9;
+  --theme-surface-card: #FFFFFF;
+  --theme-surface-muted: #EBE8DE;
+  --theme-surface-placeholder: #F1EEE4;
+  --theme-border-subtle: #E5E2D9;
+  --theme-text-primary: #23422A;
+  --theme-text-secondary: #424842;
+  --theme-text-muted: rgba(58, 90, 64, 0.7);
+  --theme-brand-primary: #23422A;
+  --theme-brand-secondary: #3A5A40;
+  --theme-accent-coral: #C76A60;
+  --theme-accent-coral-deep: #C66358;
+  --theme-tag-pink: #FCD8D4;
+  --theme-tag-peach: #FFDBC9;
+  --theme-tag-mint: #C7ECCA;
+  --theme-tag-orange: #FFA26A;
+}
+
+/* ══════════════════════════════════════════════
+   Dark theme
+   ══════════════════════════════════════════════ */
+html[data-theme="dark"] {
+  --theme-surface: #121612;
+  --theme-surface-elevated: #2D352D;
+  --theme-surface-card: #302E2A;
+  --theme-surface-muted: #1C221C;
+  --theme-surface-placeholder: #1E241E;
+  --theme-border-subtle: #3A443A;
+  --theme-text-primary: #DFEEDF;
+  --theme-text-secondary: #AFC9AF;
+  --theme-text-muted: rgba(107, 123, 107, 0.9);
+  --theme-brand-primary: #AFC9AF;
+  --theme-brand-secondary: #8CA18C;
+  --theme-accent-coral: #C76A60;
+  --theme-accent-coral-deep: #C66358;
+  --theme-tag-pink: #5C3A38;
+  --theme-tag-peach: #5C4636;
+  --theme-tag-mint: #2E4A30;
+  --theme-tag-orange: #7A4A2A;
+}
+
+/* ══════════════════════════════════════════════
+   Base styles
+   ══════════════════════════════════════════════ */
 body {
   background-color: var(--color-surface);
   color: var(--color-text-primary);
 }
 
-/* Serif headings for editorial/educational feel */
 h1,
 h2 {
   font-family: var(--font-serif);
 }
 
 a {
-  color: var(--color-vetroots-400);
+  color: var(--color-brand-secondary);
 }
 
 a:hover {
-  color: var(--color-vetroots-300);
+  color: var(--color-brand-primary);
+}
+
+/* Theme-aware prose override */
+.prose {
+  --tw-prose-body: var(--color-text-secondary);
+  --tw-prose-headings: var(--color-text-primary);
+  --tw-prose-links: var(--color-brand-secondary);
+  --tw-prose-bold: var(--color-text-primary);
+  --tw-prose-counters: var(--color-text-muted);
+  --tw-prose-bullets: var(--color-text-muted);
+  --tw-prose-quotes: var(--color-text-secondary);
+  --tw-prose-code: var(--color-text-primary);
+  --tw-prose-hr: var(--color-border-subtle);
+}
+
+/* Smooth theme transitions */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
+
+/* Disable transition on page load to prevent flash */
+html:not([data-theme]) *,
+html:not([data-theme]) *::before,
+html:not([data-theme]) *::after {
+  transition: none !important;
 }

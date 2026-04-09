@@ -21,23 +21,23 @@ export default function SearchResultCard({ hit }: SearchResultCardProps) {
 
   return (
     <Link href={href} className="group block no-underline">
-      <article className="rounded-lg border border-border-subtle bg-surface-card p-4 transition-colors hover:border-vetroots-700">
+      <article className="rounded-[var(--radius-lg)] border border-border-subtle bg-surface-card p-4 transition-shadow hover:shadow-md">
         <div className="mb-2 flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-vetroots-900/50 px-2 py-0.5 text-xs font-medium text-vetroots-400">
+          <span className="rounded-full bg-tag-pink px-2.5 py-0.5 text-xs font-medium text-text-primary">
             {contentTypeLabel(hit._contentType)}
           </span>
           {hit.category?.name && (
-            <span className="rounded-full bg-surface-elevated px-2 py-0.5 text-xs text-text-secondary">
+            <span className="rounded-full bg-tag-peach px-2.5 py-0.5 text-xs font-medium text-text-primary">
               {hit.category.name}
             </span>
           )}
           {hit.level && (
-            <span className="rounded-full bg-earth-900/50 px-2 py-0.5 text-xs font-medium text-earth-300">
+            <span className="rounded-full bg-tag-mint px-2.5 py-0.5 text-xs font-medium text-text-primary">
               {levelLabels[hit.level] ?? hit.level}
             </span>
           )}
         </div>
-        <h3 className="text-base font-semibold text-text-primary group-hover:text-vetroots-400">
+        <h3 className="text-base font-semibold text-text-primary group-hover:text-brand-secondary">
           {hit.title}
         </h3>
         {description && (
@@ -50,7 +50,7 @@ export default function SearchResultCard({ hit }: SearchResultCardProps) {
             {hit.species.map((s) => (
               <span
                 key={s.slug}
-                className="rounded bg-surface-elevated px-1.5 py-0.5 text-xs text-text-muted"
+                className="rounded-full bg-surface-elevated px-2 py-0.5 text-xs text-text-muted"
               >
                 {s.name}
               </span>

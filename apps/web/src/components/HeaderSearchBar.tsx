@@ -39,7 +39,7 @@ export default function HeaderSearchBar() {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Buscar..."
-        className="w-44 rounded-md border border-border-subtle bg-surface-elevated py-1.5 pl-8 pr-3 text-sm text-text-primary placeholder:text-text-muted focus:w-64 focus:border-vetroots-600 focus:outline-none focus:ring-1 focus:ring-vetroots-600 transition-[width]"
+        className="w-44 rounded-[var(--radius-md)] border border-border-subtle bg-surface-elevated py-1.5 pl-8 pr-3 text-sm text-text-primary placeholder:text-text-muted focus:w-64 focus:border-brand-secondary focus:outline-none focus:ring-1 focus:ring-brand-secondary transition-[width]"
       />
     </form>
   );

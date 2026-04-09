@@ -63,7 +63,7 @@ export default function FacetedFilters({
         <button
           type="button"
           onClick={() => onChange({})}
-          className="text-sm text-vetroots-400 hover:text-vetroots-300"
+          className="text-sm text-accent-coral hover:text-accent-coral-deep"
         >
           Limpiar filtros
         </button>
@@ -167,15 +167,17 @@ function FilterChip({
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-full border px-3 py-1 text-sm transition-colors ${
+      className={`rounded-[var(--radius-md)] border px-3 py-1 text-sm transition-colors ${
         active
-          ? "border-vetroots-500 bg-vetroots-900/50 text-vetroots-300"
-          : "border-border-subtle bg-surface-card text-text-secondary hover:border-vetroots-700 hover:text-text-primary"
+          ? "border-brand-primary bg-brand-primary text-surface-card"
+          : "border-border-subtle bg-surface-elevated text-text-secondary hover:border-brand-secondary hover:text-text-primary"
       }`}
     >
       {label}
       {count != null && (
-        <span className="ml-1 text-xs text-text-muted">({count})</span>
+        <span className={`ml-1 text-xs ${active ? "text-surface-card/70" : "text-text-muted"}`}>
+          ({count})
+        </span>
       )}
     </button>
   );

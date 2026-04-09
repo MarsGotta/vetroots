@@ -68,7 +68,7 @@ export default function SearchInput({
         onChange={handleChange}
         placeholder={placeholder}
         autoFocus={autoFocus}
-        className="w-full rounded-lg border border-border-subtle bg-surface-elevated py-3 pl-10 pr-10 text-text-primary placeholder:text-text-muted focus:border-vetroots-600 focus:outline-none focus:ring-1 focus:ring-vetroots-600"
+        className="w-full rounded-[var(--radius-lg)] border border-border-subtle bg-surface-muted py-3 pl-10 pr-10 text-text-primary placeholder:text-text-muted focus:border-brand-secondary focus:outline-none focus:ring-1 focus:ring-brand-secondary"
       />
       {localValue && (
         <button
